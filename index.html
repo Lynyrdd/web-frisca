@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Flower - Home</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a href="home.html" class="navbar-brand fw-bold">🌸 My Flower</a>
+    <div>
+      <a href="home.html" class="active">Home</a>
+      <a href="menu.html">Menu 1</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-text">
+    <h1>Keindahan Bunga</h1>
+    <p>
+      Bunga adalah simbol keindahan, ketulusan, dan kehidupan.
+      Setiap bunga memiliki makna dan pesona tersendiri.
+    </p>
+  </div>
+
+  <div class="hero-img"></div>
+</section>
+
+<!-- GALERI -->
+<section class="container my-5 text-center">
+  <h3 class="mb-4">BUNGA-BUNGA</h3>
+  <div class="row g-3">
+    <div class="col-md-3"><img src="https://www.kampustani.com/wp-content/uploads/2018/01/cara-menanam-bunga-mawar.jpg" class="img-fluid rounded"><p>Mawar</p></div>
+    <div class="col-md-3"><img src="https://4.bp.blogspot.com/-RoZeRRDelCk/UoUMGmcYEwI/AAAAAAAAATs/gGd-MCPGhfo/s1600/tulips-12.jpg" class="img-fluid rounded"><p>Tulip</p></div>
+    <div class="col-md-3"><img src="https://www.pacificbulbsociety.org/pbswiki/files/Lycoris/Lycoris_longituba_green_JLM.jpg" class="img-fluid rounded"><p>Lili</p></div>
+    <div class="col-md-3"><img src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/10/12/972629178.jpg" class="img-fluid rounded"><p>Anggrek</p></div>
+  </div>
+</section>
+
+<!-- FORM INPUT -->
+<section class="container my-5">
+  <h3 class="text-center mb-4">Form Pemesanan Bunga</h3>
+
+  <div class="form-box">
+    <form id="orderForm">
+      <input type="text" id="name" class="form-control mb-3" placeholder="Nama" required>
+      <input type="email" id="email" class="form-control mb-3" placeholder="Email" required>
+
+      <select id="flower" class="form-select mb-4" required>
+        <option value="" disabled selected>Pilih Bunga</option>
+        <option>Mawar</option>
+        <option>Tulip</option>
+        <option>Lili</option>
+        <option>Anggrek</option>
+      </select>
+
+      <button class="btn btn-success w-100">Simpan Data</button>
+    </form>
+  </div>
+</section>
+
+<footer>© 2025 My Flower</footer>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let data = JSON.parse(localStorage.getItem("flowerData")) || [];
+
+  data.push({
+    name: name.value,
+    email: email.value,
+    flower: flower.value
+  });
+
+  localStorage.setItem("flowerData", JSON.stringify(data));
+  window.location.href = "menu.html";
+});
+</script>
+
+</body>
+</html>

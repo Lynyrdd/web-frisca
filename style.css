@@ -1,0 +1,51 @@
+body{
+  background:#fff5f8;
+  font-family:Arial,sans-serif;
+}
+
+.navbar{
+  background:#ffb6c1;
+  padding:12px;
+}
+
+.navbar a{
+  color:black;
+  text-decoration:none;
+  margin-left:15px;
+  font-weight:500;
+}
+
+.navbar a.active,
+.navbar a:hover{
+  text-decoration:underline;
+}
+
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:50px;
+}
+
+.hero-img{
+  width:380px;
+  height:280px;
+  border-radius:15px;
+  background:url("https://www.hariannusantara.com/wp-content/uploads/2019/05/gambar-taman-bunga3.jpg") center/cover;
+}
+
+.form-box{
+  max-width:500px;
+  margin:auto;
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+footer{
+  text-align:center;
+  padding:15px;
+  background:#ffb6c1;
+  margin-top:40px;
+}
